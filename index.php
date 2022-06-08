@@ -1,11 +1,14 @@
 <link rel="stylesheet" href="resources/style.css">
 <?php
+session_start();
 if (isset($_POST['logincheck'])) {
     require_once('db/connection.php');
 
     $db = new MYSQLConection('localhost', 'root', null, 'grotnet');
     $db = $db->connect();
 
+    $_SESSION['db'] = $db;
+    
     $data = $_POST;
 
     $query = "SELECT * FROM user WHERE email = '" . $data['email'] . "'";
@@ -13,8 +16,10 @@ if (isset($_POST['logincheck'])) {
     $result = $db->query($query);
 
     if ($result->num_rows) {
-        if (mysqli_fetch_assoc($result)['haslo'] == md5($_POST['haslo'])) {
-            header('Location: ./functions/login.php?id=' . mysqli_fetch_assoc($result)['typUsera']);
+        $data = mysqli_fetch_assoc($result);
+        if ($data ['haslo'] == md5($_POST['haslo'])) {
+            $_SESSION['usertType_id'] = $data['typUsera'];
+            header('Location: ./functions/login.php');
         } else {
             echo "<div class='warning'>Błędne hasło/brak hasła</div>";
         }
@@ -22,7 +27,6 @@ if (isset($_POST['logincheck'])) {
         echo "<div class='warning'>User nie istnieje skontaktuj się z adminem</div>";
     }
 
-    $db->close();
 }
 ?>
 <div class="login-from__wrapper">
@@ -34,3 +38,5 @@ if (isset($_POST['logincheck'])) {
     </form>
 
 </div>
+
+<a href="/brief-system/functions/addBrief.php">AddBrief</a>
