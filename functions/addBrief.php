@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../resources/style.css">
 <?php
 session_start();
 if (isset($_POST['sendbref'])) {
@@ -7,8 +8,8 @@ if (isset($_POST['sendbref'])) {
 
     $tytul =  $_POST['tytul'];
     $brief =  $_POST['brief'];
-
-    $query = "INSERT INTO brief (tytul,tresc) VALUES ('".$tytul."','".$brief."')";
+    $userId = $_SESSION['user_id'];
+    $query = "INSERT INTO brief (tytul,tresc,userSend) VALUES ('".$tytul."','".$brief."','".$_SESSION['user_id']."')";
 
 
     $result = $db->query($query);
@@ -18,8 +19,8 @@ if (isset($_POST['sendbref'])) {
 
 
 ?>
-<div class="brief">
-<form action="" method="post" class="brief">
+<div class="brief__wrapper login-from__wrapper">
+<form action="" method="post" class="brief login-form">
     <h1>Brief</h1>
     <input type="tytul" name="tytul" class="tytul" placeholder="Tytul" id="">
     <label for="brief">Brief</label>

@@ -18,7 +18,8 @@ if (isset($_POST['logincheck'])) {
     if ($result->num_rows) {
         $data = mysqli_fetch_assoc($result);
         if ($data ['haslo'] == md5($_POST['haslo'])) {
-            $_SESSION['usertType_id'] = $data['typUsera'];
+            $_SESSION['userType_id'] = $data['typUsera'];
+            $_SESSION['user_id'] = $data['id'];
             header('Location: ./functions/login.php');
         } else {
             echo "<div class='warning'>Błędne hasło/brak hasła</div>";

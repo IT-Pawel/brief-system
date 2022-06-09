@@ -32,4 +32,29 @@ html,body{
     margin: 40px auto 0;
     font-size: 40px;
 }
+.brief{
+    border: 3px solid red;
+    background-color: antiquewhite;
+}
+
+.brief .tytul{
+    padding: 6px 12px;
+}
+
+.brief .send{
+    transition: 2s ease;
+    background: white;
+    color: black;
+    border: unset;
+}
+
+.brief .send:hover, .brief .send:focus{
+    background: rgb(32,65,12);
+    color: rgb(150,65,12);
+    transform: scale(1.2) rotate(45deg);
+}
+.login-from__wrapper{
+    background-color: bisque;
+}
+
 

@@ -7,12 +7,16 @@ $db = $db->connect();
 
 $data = $_POST;
 
+if($_SESSION['userType_id']==3){
+    header('Location: ./addBrief.php');
+}else{
+    Echo "Work in progress";
+}
 
 
 
 
 
-print_r($_SESSION);
 ?> 
 
 
