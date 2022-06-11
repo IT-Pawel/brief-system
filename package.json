@@ -1,0 +1,19 @@
+{
+  "name": "brief-system",
+  "version": "1.0.0",
+  "description": "Working on school project about simple brief system",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./resources/css/init.scss:./resources/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IT-Pawel/brief-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IT-Pawel/brief-system/issues"
+  },
+  "homepage": "https://github.com/IT-Pawel/brief-system#readme"
+}
