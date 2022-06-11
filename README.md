@@ -27,14 +27,11 @@ Aby działało tworzenie stylów należy w terminalu projektu wpisać
 npm run sass 
 ``` 
 
-## Jak zrobić zapytanie ajax
+## Jak zrobić zapytanie Ajax
 
 W projekcie możliwe jest do stworzenia zapytanie AJAX.
 Czyli asynchroniczne zapytanie potrzebne do ładniejszego/płynniejszego działania strony.
 
-Dla ułatwienia używamy bilbioteki jQuery
-
-Przykładowe zapytanie w jQuery
 ```
 <script>
     $.ajax(
