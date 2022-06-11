@@ -2,24 +2,24 @@
 Uczelniany projekt na laboratorium z przedmiotu Inżynieria Oprogramowania z mg Łukasz Kopania
 
 ## To Do
-[ ] Obsługa użytkowników
-[ ] Odzyskiwanie hasło
-[ ] Obsługa 
+- [ ] Obsługa użytkowników
+- [ ] Odzyskiwanie hasło
+- [ ] Obsługa 
 
 
 # Stack technologicznny
 
 Do stworzenia aplikacji użyto:
 
--Języki:
-    -PHP 7.4.19
-    -mysql 5.7.33
--Moduły:
-    -Node.js 12.22.11
-    -npm 6.14.16
--Biblioteki:
-    -Sass
-    -jQuery 3.6.0
+- Języki:
+    - PHP 7.4.19
+    - mysql 5.7.33
+- Moduły:
+    - Node.js 12.22.11
+    - npm 6.14.16
+- Biblioteki:
+    - Sass
+    - jQuery 3.6.0
 
 
 Aby działało tworzenie stylów należy w terminalu projektu wpisać
