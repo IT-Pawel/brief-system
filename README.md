@@ -1,22 +1,54 @@
-# brief-system
-Working on school project about simple brief system
+# System obsługi brief
+Uczelniany projekt na laboratorium z przedmiotu Inżynieria Oprogramowania z mg Łukasz Kopania
 
-do zrobienia:
-rejestracja + nowi użytkownicy (aby działali)
-odzyskiwanie hasło
-wyświetlanie/ zmiana statusu
-usuwanie użytkownika
-edytowanie briefu
-jak juz wypenimy bierf to aby uzytkownik miał mozliwość wyświetlania swojego biefu 
+## To Do
+[ ] Obsługa użytkowników
+[ ] Odzyskiwanie hasło
+[ ] Obsługa 
 
 
 # Stack technologicznny
 
-# Jak zrobić zapytanie ajax
+Do stworzenia aplikacji użyto:
+
+-Języki:
+    -PHP 7.4.19
+    -mysql 5.7.33
+-Moduły:
+    -Node.js 12.22.11
+    -npm 6.14.16
+-Biblioteki:
+    -Sass
+    -jQuery 3.6.0
+
+
+Aby działało tworzenie stylów należy w terminalu projektu wpisać
+``` 
+npm run sass 
+``` 
+
+## Jak zrobić zapytanie ajax
 
 W projekcie możliwe jest do stworzenia zapytanie AJAX.
 Czyli asynchroniczne zapytanie potrzebne do ładniejszego/płynniejszego działania strony.
 
 Dla ułatwienia używamy bilbioteki jQuery
 
-i
+Przykładowe zapytanie w jQuery
+```
+<script>
+    $.ajax(
+        {
+            method: 'POST',
+            dataType: 'JSON',
+            url: "/functions/functions.php",
+            data: { function: 'test' },
+            success:function(result){
+                console.log(result);
+            }
+        }
+        
+    );
+</script>
+
+```
