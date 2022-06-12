@@ -1,6 +1,5 @@
 <?php
 session_start();
-if (isset($_GET['logout'])) session_destroy();
 
 if(isset($_SERVER['HTTPS'])){
     $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
@@ -10,6 +9,10 @@ else{
 }
 $baseUrl = $protocol . "://" . $_SERVER['HTTP_HOST']."/";
 
+if ( isset($_GET['logout']) ){
+    session_destroy();
+    header( 'location:'.$baseUrl );
+} 
 ?>
 
 <head>
@@ -19,9 +22,9 @@ $baseUrl = $protocol . "://" . $_SERVER['HTTP_HOST']."/";
 <?php if (isset($_SESSION['logged'])) { ?>
     <header class="header">
         <nav class="header__nav">
-            <a href=".../panel/moje-konto.php">Moje konto</a>
-            <a href=".../panel/briefy.php">Briefy</a>
-            <a href="/?logout">Wyloguj</a>
+            <a href="<?php echo $baseUrl;?>/panel/moje-konto.php">Moje konto</a>
+            <a href="<?php echo $baseUrl;?>/panel/briefy.php">Briefy</a>
+            <a href="/?logout=true">Wyloguj</a>
         </nav>
     </header>
 <?php } ?>

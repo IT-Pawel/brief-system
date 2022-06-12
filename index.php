@@ -1,5 +1,9 @@
 <?php
 include 'header.php';
+
+if( isset($_SESSION['logged'])) {
+    header('Location: '.$baseUrl.'panel/moje-konto.php');
+}
 ?>
 <div class="login-form__wrapper">
     <form action="" method="post" class="login-form">
