@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 
 if( isset($_SESSION['logged'])) {
     header('Location: '.$baseUrl.'panel/moje-konto.php');

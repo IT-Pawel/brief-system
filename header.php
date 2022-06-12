@@ -18,7 +18,7 @@ if ( isset($_GET['logout']) ){
 ?>
 
 <head>
-    <script src="../modules/jquery/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo $baseUrl?>modules/jquery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="<?php echo $baseUrl?>resources/style.css">
 </head>
 <?php if (isset($_SESSION['logged'])) { ?>
@@ -26,6 +26,9 @@ if ( isset($_GET['logout']) ){
         <nav class="header__nav">
             <a href="<?php echo $baseUrl;?>panel/moje-konto.php">Moje konto</a>
             <a href="<?php echo $baseUrl;?>panel/briefy.php">Briefy</a>
+            <?php if( $_SESSION['user_id']==1) : ?>
+                <a href="<?php echo $baseUrl;?>panel/admin/users.php">Użytkownicy</a>
+            <?php endif; ?>
             <a href="/?logout=true">Wyloguj</a>
         </nav>
     </header>

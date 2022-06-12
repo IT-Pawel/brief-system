@@ -1,5 +1,5 @@
 <?php
-    require_once 'header.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 ?>
 <div class="register-form__wrapper">
     <form action="" method="post" class="register-form">

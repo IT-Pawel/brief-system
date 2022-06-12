@@ -1,15 +1,22 @@
 <?php
-include '../header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/header.php';
 
 if (!isset($_SESSION['logged'])) {
     header('Location: ' . $baseUrl);
 }
 
 $db = new mysqli('localhost', 'root', null, 'grotnet');
+
+
+if( isset($_POST['usunkonto'])){
+    $query = "DELETE  FROM user WHERE id = '" . $_POST['userId'] . "'";
+    $result = $db->query($query);
+    header( 'location:'.$baseUrl.'?logout=true' );
+}
+
 $query = "SELECT * FROM user WHERE id = '" . $_SESSION['user_id'] . "'";
 $result = $db->query($query);
 $result = mysqli_fetch_assoc($result);
-
 ?>
 
 <main class="account">
@@ -35,6 +42,15 @@ $result = mysqli_fetch_assoc($result);
         </fieldset>
         <input type="submit" name="updateuserpassword" class="send-haslo" value="Zmien haslo">
     </form>
+
+
+
+    <form action="" method="post">
+        <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['user_id'];?>">
+        <input type="submit" name="usunkonto" class="usunkonto" value="USUŃ KONTO">
+    </form>
+
+
 </main>
 
 
