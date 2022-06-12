@@ -12,11 +12,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Zrzut struktury bazy danych grotnet
-CREATE DATABASE IF NOT EXISTS `grotnet` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */;
-USE `grotnet`;
-
 -- Zrzut struktury tabela grotnet.brief
 CREATE TABLE IF NOT EXISTS `brief` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
@@ -28,7 +23,12 @@ CREATE TABLE IF NOT EXISTS `brief` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Eksport danych został odznaczony.
+-- Zrzucanie danych dla tabeli grotnet.brief: ~0 rows (około)
+DELETE FROM `brief`;
+/*!40000 ALTER TABLE `brief` DISABLE KEYS */;
+INSERT INTO `brief` (`id`, `userAssigned`, `tytul`, `tresc`, `status`, `userSend`) VALUES
+	(1, NULL, 'asfasf', ' asfasf', NULL, NULL);
+/*!40000 ALTER TABLE `brief` ENABLE KEYS */;
 
 -- Zrzut struktury tabela grotnet.statusbrief
 CREATE TABLE IF NOT EXISTS `statusbrief` (
@@ -37,7 +37,10 @@ CREATE TABLE IF NOT EXISTS `statusbrief` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Eksport danych został odznaczony.
+-- Zrzucanie danych dla tabeli grotnet.statusbrief: ~0 rows (około)
+DELETE FROM `statusbrief`;
+/*!40000 ALTER TABLE `statusbrief` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statusbrief` ENABLE KEYS */;
 
 -- Zrzut struktury tabela grotnet.user
 CREATE TABLE IF NOT EXISTS `user` (
@@ -54,7 +57,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `user_ibfk_2` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Eksport danych został odznaczony.
+-- Zrzucanie danych dla tabeli grotnet.user: ~3 rows (około)
+DELETE FROM `user`;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `email`, `haslo`, `imie`, `nazwisko`, `typUsera`) VALUES
+	(1, 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 'Weronika', 'Grotek', 1),
+	(2, 'test@test.com', '098f6bcd4621d373cade4e832627b4f6', 'Test', 'Test', 2),
+	(3, 'test1@test1.com', 'cc03e747a6afbbcbf8be7668acfebee5', 'test', 'test', 3);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- Zrzut struktury tabela grotnet.usertype
 CREATE TABLE IF NOT EXISTS `usertype` (
@@ -63,7 +73,14 @@ CREATE TABLE IF NOT EXISTS `usertype` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Eksport danych został odznaczony.
+-- Zrzucanie danych dla tabeli grotnet.usertype: ~3 rows (około)
+DELETE FROM `usertype`;
+/*!40000 ALTER TABLE `usertype` DISABLE KEYS */;
+INSERT INTO `usertype` (`id`, `nazwa`) VALUES
+	(1, 'admin'),
+	(2, 'pracownik'),
+	(3, 'klient');
+/*!40000 ALTER TABLE `usertype` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
