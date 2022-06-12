@@ -21,9 +21,10 @@ a {
     }
 }
 
-input[type="submit"] {
+input[type="submit"],.btn {
     color: red;
     transition: $transtion-standard;
+    padding: 8px 12px;
     &:hover,
     &:focus {
         color: mediumspringgreen;

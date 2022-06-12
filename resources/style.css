@@ -20,12 +20,13 @@ a:hover, a:focus {
   color: mediumspringgreen;
 }
 
-input[type=submit] {
+input[type=submit], .btn {
   color: red;
   transition: 0.3s ease;
+  padding: 8px 12px;
   background-color: blueviolet;
 }
-input[type=submit]:hover, input[type=submit]:focus {
+input[type=submit]:hover, input[type=submit]:focus, .btn:hover, .btn:focus {
   color: mediumspringgreen;
   background-color: chocolate;
 }

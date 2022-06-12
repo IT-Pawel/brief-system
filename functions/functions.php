@@ -26,7 +26,7 @@ function loginToSys()
             $_SESSION['logged'] = true;
             echo json_encode([
                 "response" => 400,
-                "redirect" => "/functions/login.php"
+                "redirect" => "/panel/moje-konto.php"
             ]);
         } else {
             echo json_encode(["response" => "Błędne hasło/brak hasła"]);
@@ -62,7 +62,7 @@ function registerToSys()
         $_SESSION['logged'] = true;
         echo json_encode([
             "response" => 400,
-            "redirect" => "/functions/login.php"
+            "redirect" => "/panel/moje-konto.php"
         ]);
     } else {
         echo json_encode(["response" => "User istnieje. Zaloguj się na konto"]);

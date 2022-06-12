@@ -3,8 +3,7 @@ Uczelniany projekt na laboratorium z przedmiotu Inżynieria Oprogramowania z mg 
 
 ## To Do
 - [x] Obsługa użytkowników
-- [ ] Odzyskiwanie hasło
-- [ ] Obsługa briefów
+- [x] Obsługa briefów
 
 
 # Stack technologicznny
