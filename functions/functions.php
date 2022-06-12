@@ -110,3 +110,14 @@ function updateUserHaslo(){
         echo json_encode(['response'=>"Hasło zaktualizowane"]);
     };
 }
+
+function usunUsera(){
+
+    $db = new mysqli('localhost', 'root', null, 'grotnet');
+
+    $request = $_POST;
+
+    $query = "DELETE FROM user WHERE id = '" . $request['id'] . "'";
+    $db->query($query);
+    echo json_encode(['response'=>"User usunięty"]);
+}

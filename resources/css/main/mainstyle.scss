@@ -113,3 +113,16 @@ input[type="submit"] {
     }
     
 }
+
+
+.users{
+    &-table{
+        width: 100%;
+        td{
+            text-align: center;
+            form{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

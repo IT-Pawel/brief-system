@@ -111,4 +111,14 @@ input[type=submit]:hover, input[type=submit]:focus {
   text-align: center;
 }
 
+.users-table {
+  width: 100%;
+}
+.users-table td {
+  text-align: center;
+}
+.users-table td form {
+  margin-bottom: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
