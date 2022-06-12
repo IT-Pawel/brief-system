@@ -31,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `brief` (
   KEY `status` (`status`),
   KEY `userAssigned` (`userAssigned`),
   KEY `userSend` (`userSend`),
-  CONSTRAINT `FK_brief_user` FOREIGN KEY (`userSend`) REFERENCES `user` (`id`),
   CONSTRAINT `brief_ibfk_1` FOREIGN KEY (`status`) REFERENCES `statusbrief` (`id`),
   CONSTRAINT `brief_ibfk_2` FOREIGN KEY (`userAssigned`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
@@ -60,8 +59,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `typUsera` (`typUsera`),
-  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`),
-  CONSTRAINT `user_ibfk_2` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`)
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- Eksport danych został odznaczony.
