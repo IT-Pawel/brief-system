@@ -28,8 +28,6 @@ CREATE TABLE IF NOT EXISTS `brief` (
   PRIMARY KEY (`id`),
   KEY `status` (`status`),
   KEY `userAssigned` (`userAssigned`),
-  KEY `FK_brief_user` (`userSend`),
-  CONSTRAINT `FK_brief_user` FOREIGN KEY (`userSend`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `brief_ibfk_1` FOREIGN KEY (`status`) REFERENCES `statusbrief` (`id`),
   CONSTRAINT `brief_ibfk_2` FOREIGN KEY (`userAssigned`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
