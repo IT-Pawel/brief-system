@@ -14,12 +14,10 @@
 
 
 -- Zrzut struktury bazy danych grotnet
-DROP DATABASE IF EXISTS `grotnet`;
 CREATE DATABASE IF NOT EXISTS `grotnet` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */;
 USE `grotnet`;
 
 -- Zrzut struktury tabela grotnet.brief
-DROP TABLE IF EXISTS `brief`;
 CREATE TABLE IF NOT EXISTS `brief` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `userAssigned` int(255) DEFAULT NULL,
@@ -30,7 +28,8 @@ CREATE TABLE IF NOT EXISTS `brief` (
   PRIMARY KEY (`id`),
   KEY `status` (`status`),
   KEY `userAssigned` (`userAssigned`),
-  KEY `userSend` (`userSend`),
+  KEY `FK_brief_user` (`userSend`),
+  CONSTRAINT `FK_brief_user` FOREIGN KEY (`userSend`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `brief_ibfk_1` FOREIGN KEY (`status`) REFERENCES `statusbrief` (`id`),
   CONSTRAINT `brief_ibfk_2` FOREIGN KEY (`userAssigned`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
@@ -38,7 +37,6 @@ CREATE TABLE IF NOT EXISTS `brief` (
 -- Eksport danych został odznaczony.
 
 -- Zrzut struktury tabela grotnet.statusbrief
-DROP TABLE IF EXISTS `statusbrief`;
 CREATE TABLE IF NOT EXISTS `statusbrief` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(255) NOT NULL,
@@ -48,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `statusbrief` (
 -- Eksport danych został odznaczony.
 
 -- Zrzut struktury tabela grotnet.user
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -59,13 +56,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `typUsera` (`typUsera`),
-  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`)
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`),
+  CONSTRAINT `user_ibfk_2` FOREIGN KEY (`typUsera`) REFERENCES `usertype` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- Eksport danych został odznaczony.
 
 -- Zrzut struktury tabela grotnet.usertype
-DROP TABLE IF EXISTS `usertype`;
 CREATE TABLE IF NOT EXISTS `usertype` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nazwa` varchar(255) NOT NULL,
