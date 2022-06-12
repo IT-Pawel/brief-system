@@ -26,7 +26,7 @@ if ( isset($_GET['logout']) ){
         <nav class="header__nav">
             <a href="<?php echo $baseUrl;?>panel/moje-konto.php">Moje konto</a>
             <a href="<?php echo $baseUrl;?>panel/briefy.php">Briefy</a>
-            <?php if( $_SESSION['user_id']==1) : ?>
+            <?php if( $_SESSION['userId']==1) : ?>
                 <a href="<?php echo $baseUrl;?>panel/admin/users.php">Użytkownicy</a>
             <?php endif; ?>
             <a href="/?logout=true">Wyloguj</a>

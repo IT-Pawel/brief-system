@@ -8,8 +8,8 @@ if (isset($_POST['sendbref'])) {
 
     $tytul =  $_POST['tytul'];
     $brief =  $_POST['brief'];
-    $userId = $_SESSION['user_id'];
-    $query = "INSERT INTO brief (tytul,tresc,userSend) VALUES ('".$tytul."','".$brief."','".$_SESSION['user_id']."')";
+    $userId = $_SESSION['userId'];
+    $query = "INSERT INTO brief (tytul,tresc,userSend) VALUES ('".$tytul."','".$brief."','".$_SESSION['userId']."')";
 
 
     $result = $db->query($query);

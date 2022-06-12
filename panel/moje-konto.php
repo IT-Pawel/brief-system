@@ -14,7 +14,7 @@ if( isset($_POST['usunkonto'])){
     header( 'location:'.$baseUrl.'?logout=true' );
 }
 
-$query = "SELECT * FROM user WHERE id = '" . $_SESSION['user_id'] . "'";
+$query = "SELECT * FROM user WHERE id = '" . $_SESSION['userId'] . "'";
 $result = $db->query($query);
 $result = mysqli_fetch_assoc($result);
 ?>
@@ -26,7 +26,7 @@ $result = mysqli_fetch_assoc($result);
     <form action="" method="post" class="update-form dane">
         <fieldset>
             <legend>Zmień dane</legend>
-            <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['user_id'];?>">
+            <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['userId'];?>">
             <input type="text" name="imie" class="imie" value="<?php echo $result['imie'] ?>">
             <input type="text" name="nazwisko" class="nazwisko" value="<?php echo $result['nazwisko'] ?>">
         </fieldset>
@@ -36,7 +36,7 @@ $result = mysqli_fetch_assoc($result);
     <form action="" method="post" class="update-form haslo">
     <fieldset>
             <legend>Zmień hasło</legend>
-            <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['user_id'];?>">
+            <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['userId'];?>">
             <input type="password" class="hasloold" name="haslo"  placeholder="Stare haslo">
             <input type="password" class="haslonew" min="6" name="haslo" placeholder="Haslo">
         </fieldset>
@@ -46,7 +46,7 @@ $result = mysqli_fetch_assoc($result);
 
 
     <form action="" method="post">
-        <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['user_id'];?>">
+        <input type="hidden" class="id" name="userId" value="<?php echo $_SESSION['userId'];?>">
         <input type="submit" name="usunkonto" class="usunkonto" value="USUŃ KONTO">
     </form>
 
@@ -143,8 +143,4 @@ $result = mysqli_fetch_assoc($result);
             }
         });
     })
-
-
-
-
 </script>

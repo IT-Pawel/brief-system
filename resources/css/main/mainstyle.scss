@@ -74,22 +74,34 @@ input[type="submit"] {
     margin: 40px auto 0;
     font-size: 40px;
 }
-.brief {
-    border: 3px solid red;
-    background-color: antiquewhite;
-    .tytul {
-        padding: 6px 12px;
+
+.brief{
+    &-table{
+        width: 100%;
+        td{
+            text-align: center;
+            form{
+                margin-bottom: 0;
+            }
+        }
     }
-    .send {
-        transition: $transtion-standard;
-        background: white;
-        color: black;
-        border: unset;
-        &:hover,
-        &:focus {
-            background: rgb(32, 65, 12);
-            color: rgb(150, 65, 12);
-            transform: scale(1.2);
+    &-from{
+        border: 3px solid red;
+        background-color: antiquewhite;
+        .tytul {
+            padding: 6px 12px;
+        }
+        .send {
+            transition: $transtion-standard;
+            background: white;
+            color: black;
+            border: unset;
+            &:hover,
+            &:focus {
+                background: rgb(32, 65, 12);
+                color: rgb(150, 65, 12);
+                transform: scale(1.2);
+            }
         }
     }
 }

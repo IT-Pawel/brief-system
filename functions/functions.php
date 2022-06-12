@@ -22,7 +22,7 @@ function loginToSys()
         $data = mysqli_fetch_assoc($result);
         if ($data['haslo'] == md5($_POST['haslo'])) {
             $_SESSION['userType_id'] = $data['typUsera'];
-            $_SESSION['user_id'] = $data['id'];
+            $_SESSION['userId'] = $data['id'];
             $_SESSION['logged'] = true;
             echo json_encode([
                 "response" => 400,
@@ -58,7 +58,7 @@ function registerToSys()
         $db->query($query);
         $newUserId  = $db->insert_id;
         $_SESSION['userType_id'] = 3;
-        $_SESSION['user_id'] = $newUserId;
+        $_SESSION['userId'] = $newUserId;
         $_SESSION['logged'] = true;
         echo json_encode([
             "response" => 400,
@@ -120,4 +120,16 @@ function usunUsera(){
     $query = "DELETE FROM user WHERE id = '" . $request['id'] . "'";
     $db->query($query);
     echo json_encode(['response'=>"User usunięty"]);
+}
+
+
+function usunBrief(){
+
+    $db = new mysqli('localhost', 'root', null, 'grotnet');
+
+    $request = $_POST;
+
+    $query = "DELETE FROM brief WHERE id = '" . $request['id'] . "'";
+    $db->query($query);
+    echo json_encode(['response'=>"Brief usunięty"]);
 }

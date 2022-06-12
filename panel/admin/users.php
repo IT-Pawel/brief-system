@@ -3,10 +3,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 
 
-if ($_SESSION['user_id'] != 1) header('location:' . $baseUrl . 'panel/moje-konto.php');
+if ($_SESSION['userId'] != 1) header('location:' . $baseUrl . 'panel/moje-konto.php');
 
 $db = new mysqli('localhost', 'root', null, 'grotnet');
-$query = "SELECT usertype.id AS idType, usertype.nazwa, user.*  FROM user INNER JOIN usertype ON usertype.id = user.typUsera WHERE user.id != " . $_SESSION['user_id'] . "";
+$query = "SELECT usertype.id AS idType, usertype.nazwa, user.*  FROM user INNER JOIN usertype ON usertype.id = user.typUsera WHERE user.id != " . $_SESSION['userId'] . "";
 $query = $db->query($query);
 
 if(isset($_POST['registercheck'])){
@@ -72,7 +72,7 @@ while ($row = mysqli_fetch_assoc($query)) {
         endif; ?>
     </table> 
     <div class="register-form__wrapper">
-    <form action="" method="post" class="register-form">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="register-form">
     <h2>Dodaj usera</h2>
         <input type="email" name="email" class="register-from__input email" require placeholder="Email">
         <input type="text" name="imie" class="register-from__input imie" placeholder="Imię">

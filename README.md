@@ -2,9 +2,9 @@
 Uczelniany projekt na laboratorium z przedmiotu Inżynieria Oprogramowania z mg Łukasz Kopania
 
 ## To Do
-- [ ] Obsługa użytkowników
+- [x] Obsługa użytkowników
 - [ ] Odzyskiwanie hasło
-- [ ] Obsługa 
+- [ ] Obsługa briefów
 
 
 # Stack technologicznny

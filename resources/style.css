@@ -76,20 +76,29 @@ input[type=submit]:hover, input[type=submit]:focus {
   font-size: 40px;
 }
 
-.brief {
+.brief-table {
+  width: 100%;
+}
+.brief-table td {
+  text-align: center;
+}
+.brief-table td form {
+  margin-bottom: 0;
+}
+.brief-from {
   border: 3px solid red;
   background-color: antiquewhite;
 }
-.brief .tytul {
+.brief-from .tytul {
   padding: 6px 12px;
 }
-.brief .send {
+.brief-from .send {
   transition: 0.3s ease;
   background: white;
   color: black;
   border: unset;
 }
-.brief .send:hover, .brief .send:focus {
+.brief-from .send:hover, .brief-from .send:focus {
   background: rgb(32, 65, 12);
   color: rgb(150, 65, 12);
   transform: scale(1.2);
