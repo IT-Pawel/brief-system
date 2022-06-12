@@ -2,6 +2,14 @@ html,
 body {
   height: 100%;
   margin: 0;
+  background-color: bisque;
+}
+
+main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 a {
@@ -23,29 +31,42 @@ input[type=submit]:hover, input[type=submit]:focus {
 }
 
 .login-form,
-.register-form {
+.register-form,
+.update-form {
   text-align: center;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 .login-form__wrapper,
-.register-form__wrapper {
+.register-form__wrapper,
+.update-form__wrapper {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: bisque;
 }
 .login-form h1,
-.register-form h1 {
+.register-form h1,
+.update-form h1 {
   margin-bottom: 12px;
 }
 .login-form input:not(:last-child),
-.register-form input:not(:last-child) {
+.register-form input:not(:last-child),
+.update-form input:not(:last-child) {
   margin-bottom: 12px;
+}
+.login-form fieldset,
+.register-form fieldset,
+.update-form fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-form .send {
+  margin-top: 20px;
 }
 
 .warning {
@@ -72,6 +93,22 @@ input[type=submit]:hover, input[type=submit]:focus {
   background: rgb(32, 65, 12);
   color: rgb(150, 65, 12);
   transform: scale(1.2);
+}
+
+.header {
+  margin: 20px;
+  text-align: center;
+}
+.header a {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.header a:not(:last-child) {
+  padding-right: 20px;
+}
+
+.account h1 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

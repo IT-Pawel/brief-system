@@ -68,3 +68,45 @@ function registerToSys()
         echo json_encode(["response" => "User istnieje. Zaloguj się na konto"]);
     }
 }
+
+
+function updateUserDane(){
+
+    $db = new mysqli('localhost', 'root', null, 'grotnet');
+
+    $request = $_POST;
+
+    $query = "UPDATE user SET imie = '" . $request['imie'] . "', 
+    nazwisko = '" . $request['nazwisko'] . "'
+    WHERE id = '" . $request['id'] . "'";
+
+    $db->query($query);
+
+    echo json_encode([
+        "response" => "Dane zaktualizowane",
+    ]);
+}
+
+
+
+
+function updateUserHaslo(){
+
+    $db = new mysqli('localhost', 'root', null, 'grotnet');
+
+    $request = $_POST;
+
+    $query = "SELECT * FROM user WHERE id = '" . $request['id'] . "'";
+
+    $result = $db->query($query);
+    $result = mysqli_fetch_assoc($result);
+
+
+    if( $result['haslo'] != md5($request['hasloold'])) echo json_encode(['response'=>"Stare hasło nie pasuje. Nie zaktualizowano hasła"]);
+    else if( $result['haslo'] == md5($request['haslonew'])) echo json_encode(['response'=>"Nowe hasło nie może być takie jak stare"]);
+    else if( $result['haslo'] == md5($request['hasloold'])){
+        $query = "UPDATE user SET haslo = '" . md5($request['haslonew']) . "' WHERE id = '" . $request['id'] . "'";
+        $db->query($query);
+        echo json_encode(['response'=>"Hasło zaktualizowane"]);
+    };
+}

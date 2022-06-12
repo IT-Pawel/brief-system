@@ -2,6 +2,14 @@ html,
 body {
     height: 100%;
     margin: 0;
+    background-color: bisque;
+}
+
+main{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 a {
@@ -25,7 +33,8 @@ input[type="submit"] {
 }
 
 .login-form,
-.register-form {
+.register-form,
+.update-form {
     text-align: center;
     padding: 20px;
     display: flex;
@@ -37,7 +46,6 @@ input[type="submit"] {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        background-color: bisque;
     }
     h1 {
         margin-bottom: 12px;
@@ -46,6 +54,16 @@ input[type="submit"] {
         &:not(:last-child) {
             margin-bottom: 12px;
         }
+    }
+    fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.update-form{
+    .send{
+        margin-top: 20px;
     }
 }
 
@@ -74,4 +92,24 @@ input[type="submit"] {
             transform: scale(1.2);
         }
     }
+}
+
+
+.header{
+    margin: 20px;
+    text-align: center;
+    a{
+        text-decoration: none;
+        transition: $transtion-standard;
+        &:not(:last-child){
+            padding-right: 20px;
+        }
+    }
+}
+
+.account{
+    h1{
+        text-align: center;
+    }
+    
 }
