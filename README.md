@@ -44,7 +44,6 @@ Czyli asynchroniczne zapytanie potrzebne do ładniejszego/płynniejszego działa
                 console.log(result);
             }
         }
-        
     );
 </script>
 
