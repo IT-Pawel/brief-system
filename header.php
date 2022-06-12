@@ -13,6 +13,8 @@ if ( isset($_GET['logout']) ){
     session_destroy();
     header( 'location:'.$baseUrl );
 } 
+
+
 ?>
 
 <head>
