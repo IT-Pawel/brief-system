@@ -25,11 +25,7 @@ CREATE TABLE IF NOT EXISTS `brief` (
   `tresc` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `userSend` int(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `status` (`status`),
-  KEY `userAssigned` (`userAssigned`),
-  CONSTRAINT `brief_ibfk_1` FOREIGN KEY (`status`) REFERENCES `statusbrief` (`id`),
-  CONSTRAINT `brief_ibfk_2` FOREIGN KEY (`userAssigned`) REFERENCES `user` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- Eksport danych został odznaczony.
