@@ -16,15 +16,24 @@ Do stworzenia aplikacji użyto:
 - Moduły:
     - Node.js 12.22.11
     - npm 6.14.16
+    - Git
 - Biblioteki:
     - Sass
     - jQuery 3.6.0
-
 
 Aby działało tworzenie stylów należy w terminalu projektu wpisać
 ``` 
 npm run sass 
 ``` 
+Aby projekt działał z domeną należy zainstalować program laragon i sklonować projekt do folderu www
+za pomocą komenty
+```
+git clone https://github.com/Wero233/brief-system.git
+```
+Następnie zresetować program i wejść na stronę 
+```
+brief-system.test
+```
 
 ## Jak zrobić zapytanie Ajax
 
