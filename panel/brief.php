@@ -13,10 +13,14 @@ if (isset($_POST['sendbref'])) {
 
     $tytul =  $_POST['tytul'];
     $brief =  $_POST['brief'];
-    $status =  $_POST['status'];
     $userId = $_SESSION['userId'];
-
-    $queryadd = "UPDATE brief SET tytul = '$brief', tresc='$brief',status='$status'";
+    if ($_SESSION['userType_id'] != 3){
+    $status =  $_POST['status'];
+        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief',status='$status'";
+    }else {
+        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief'";
+    }
+    
     $db->query($queryadd);
     echo "<meta http-equiv='refresh' content='0'>";
 }
