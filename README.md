@@ -25,6 +25,8 @@ Aby działało tworzenie stylów należy w terminalu projektu wpisać
 ``` 
 npm run sass 
 ``` 
+
+## Instalacja projektu
 Aby projekt działał z domeną należy zainstalować program laragon i sklonować projekt do folderu www
 za pomocą komenty
 ```
