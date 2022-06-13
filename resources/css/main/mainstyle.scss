@@ -109,8 +109,9 @@ input[type="submit"],.btn {
 
 
 .header{
-    margin: 20px;
+    padding: 20px;
     text-align: center;
+    background-color: blue;
     a{
         text-decoration: none;
         transition: $transtion-standard;

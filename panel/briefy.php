@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/header.php';
 
 $db = new mysqli('localhost', 'root', null, 'grotnet');
 
-if ($_SESSION['userType_id'] != 3) {
+if ($_SESSION['userType_id'] != 3 ) {
     $query = "SELECT user.email ,statusbrief.nazwa, brief.* FROM brief INNER JOIN user on brief.userSend = user.id INNER JOIN statusbrief on statusbrief.id = brief.status";
     $result = $db->query($query);
     while ($row = mysqli_fetch_assoc($result)) {
@@ -31,7 +31,7 @@ if ($_SESSION['userType_id'] != 3) {
             <th>
                 Status
             </th>
-            <?php if ($_SESSION['userType_id'] != 3) : ?>
+            <?php if ($_SESSION['userType_id'] != 3 && $_SESSION['userType_id'] != 2) : ?>
                 <th>
                     Akcja
                 </th>
@@ -52,7 +52,7 @@ if ($_SESSION['userType_id'] != 3) {
                         <?php echo $row['nazwa']; ?>
                     </td>
                     <td>
-                        <?php if ($_SESSION['userType_id'] != 3) : ?>
+                        <?php if ($_SESSION['userType_id'] != 3 && $_SESSION['userType_id'] != 2) : ?>
                             <form action="" method="post" class="remove-brief">
                                 <input type="submit" class="remove" data-id=<?php echo $row['id']; ?> value="Usuń">
                             </form>
@@ -64,7 +64,7 @@ if ($_SESSION['userType_id'] != 3) {
     </table>
     <br>
     <a href="./dodaj-brief.php" class="btn" style="text-align:center;">Dodaj brief</a>
-    <?php if ($_SESSION['userType_id'] != 3) : ?>
+    <?php if ($_SESSION['userType_id'] != 3 && $_SESSION['userType_id'] != 2) : ?>
         <script>
             $('.remove').on('click', (e) => {
                 e.preventDefault();

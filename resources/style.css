@@ -3,6 +3,7 @@ body {
   height: 100%;
   margin: 0;
   background-color: bisque;
+  font-size: 24px;
 }
 
 main {
@@ -106,12 +107,20 @@ input[type=submit]:hover, input[type=submit]:focus, .btn:hover, .btn:focus {
 }
 
 .header {
-  margin: 20px;
+  padding: 20px;
   text-align: center;
+  background-color: blue;
 }
 .header a {
   text-decoration: none;
   transition: 0.3s ease;
+  color:red;
+}
+
+.header a:hover {
+  text-decoration: none;
+
+  color:white;
 }
 .header a:not(:last-child) {
   padding-right: 20px;
