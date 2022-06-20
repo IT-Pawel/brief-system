@@ -16,9 +16,9 @@ if (isset($_POST['sendbref'])) {
     $userId = $_SESSION['userId'];
     if ($_SESSION['userType_id'] != 3){
     $status =  $_POST['status'];
-        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief',status='$status'";
+        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief',status='$status' where id =".$_GET['id'];
     }else {
-        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief'";
+        $queryadd = "UPDATE brief SET tytul = '$tytul', tresc='$brief' where id =".$_GET['id'];
     }
     
     $db->query($queryadd);
